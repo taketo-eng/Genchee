@@ -117,6 +117,10 @@
         display:block;
     }
 
+    .logo{
+        width: 50rem;
+    }
+
     .nav-icon img{
         width:10rem;
     }
