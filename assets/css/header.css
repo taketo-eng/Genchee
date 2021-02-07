@@ -188,6 +188,10 @@
         color:white;
     }
 
+    .senpai .nav-list li a{
+        color:white;
+    }
+
     .open{
         left:0;
     }
@@ -231,6 +235,10 @@
     .nav-list li a{
         font-weight:bold;
         color:white;
+    }
+
+    .senpai .nav-list li a{
+        color:black;
     }
     
 
