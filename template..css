@@ -1,0 +1,57 @@
+:root{
+    --navy: #000087;
+    --gold: #B28300;
+}
+
+
+body:not(#canv) {
+    width: 100%;
+    position: relative;
+    margin: 0;
+}
+.contents {
+    max-width: 1000px;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+
+@media screen and (max-width: 767px){
+
+}
+
+
+@media screen and (min-width: 768px){
+    
+    
+}
+
+
+
+
+
+
+/*以下はheader.cssに書く内容*/
+@media screen and (max-width: 767px){  /*スマホ*/
+    html{
+        font-size: 1vw;
+    }
+}
+@media screen and (min-width: 768px){  /*PC*/
+
+    @media screen and (max-width: 1000px){
+        html{
+            font-size: 1vw;
+        }
+    }
+    
+    @media screen and (min-width: 1001px){
+        html{
+            font-size: 10px;
+        }
+    }
+}

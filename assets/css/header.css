@@ -1,0 +1,255 @@
+.header {
+    position:relative;
+    width:100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width:90vw;
+    margin:0 auto;
+    padding-top:10rem;
+}
+
+.logo{
+    width: 35rem;
+}
+
+
+
+/*top only*/
+.header.top{
+    height:100rem;
+    background-image:url("../img/background/momochi.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center center;
+
+    position:relative;
+}
+
+.catchphrase{
+    margin-top:5rem;
+    position:relative;
+    background-image:url("../img/background/haze.png");
+    background-size:cover;
+    background-position:center center;
+    width:80rem;
+    margin-left:5rem;
+}
+
+.catchphrase::before{
+    content:'';
+    display:block;
+    padding-top:66%;
+}
+
+.wrapper{
+    position:absolute;
+    right:0;
+    left:0;
+    top:0;
+    bottom:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.catchphrase p{
+    margin:0;
+    color:white;
+    font-size:5rem;
+    font-weight:bold;
+}
+
+.em{
+    font-size:6rem;
+}
+
+.em:nth-of-type(4){
+    font-family:serif;
+}
+
+.wishes{
+    position:absolute;
+    right:15rem;
+    bottom:-13rem;
+}
+
+.wish{
+    display:block;
+    width:25rem;
+    padding:4rem 2rem;
+    background-color:white;
+    border:0.6rem solid black;
+    border-radius:20px;
+    font-size:3rem;
+    font-weight:bold;
+    text-align:center;
+    margin:0;
+}
+
+.wish:nth-of-type(1){
+    transform:translate(-13rem, 2.5rem) rotate(-10deg);
+}
+.wish:nth-of-type(2){
+    transform: rotate(-20deg); 
+}
+.wish:nth-of-type(3){
+    transform:translate(-27rem, -19rem) rotate(10deg);
+}
+
+@media screen and (max-width: 767px) {
+    /*スマホ*/
+    html {
+        font-size: 1vw;
+    }
+
+    .header.top{
+        height:150rem;
+        background-position-x:-130px;
+    }
+
+    .sp{
+        display:block;
+    }
+
+    .nav-icon img{
+        width:10rem;
+    }
+
+    .close-icon img{
+        position:absolute;
+        width:10rem;
+        right:3rem;
+        top:3rem;
+    }
+
+    .header-main {
+        padding-top:5rem;
+    }    
+
+    .catchphrase{
+        width:100rem;
+        margin:15rem auto 0;
+    }
+
+    .catchphrase p{
+        font-size:6rem;
+    }
+
+    .em{
+        font-size:8rem;
+    }
+
+    .wishes{
+        left:50%;
+        bottom:-20rem;
+    }
+
+    /*navigation*/
+    .global-nav{
+        position:fixed;
+        top:0;
+        left:-80rem;
+        bottom:0;
+        width:80rem;
+        z-index: 1000;
+
+        padding-top:20rem;
+        padding-bottom:100vh;
+        background:rgba(0, 0, 135, 0.8);
+        transition:left 0.5s;
+    }
+
+    .nav-list{
+        display:grid;
+        font-size:6rem;
+        text-align:left;
+    }
+
+    .nav-list li{
+        padding-top:0;
+        padding-bottom:0;
+        padding-left:5rem;
+        line-height:6rem;
+    }
+
+
+    .nav-list li a{
+        padding-top:5rem;
+        padding-bottom:5rem;
+        display:inline-block;
+        width:100%;
+        text-decoration: none; 
+        color:white;
+    }
+
+    .open{
+        left:0;
+    }
+
+    .wish{
+        display:block;
+        width:35rem;
+        padding:8rem 4rem;
+        font-size:4rem;
+    }
+    
+    .wish:nth-of-type(1){
+        transform:translate(-20rem, 6rem) rotate(-10deg);
+    }
+    .wish:nth-of-type(2){
+        transform: rotate(-20deg); 
+    }
+    .wish:nth-of-type(3){
+        transform:translate(-40rem, -25rem) rotate(10deg);
+    }
+}
+@media screen and (min-width: 768px) {
+    /*PC*/
+    .sp{
+        display:none;
+    }
+
+    .nav-list{
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        list-style-type:none;
+        font-size:2.5rem;
+    }
+    
+    .nav-list li{
+        white-space:nowrap;
+        padding:0 1rem;
+    }
+
+    .nav-list li a{
+        font-weight:bold;
+        color:white;
+    }
+    
+
+    @media screen and (max-width: 1000px) {
+        html {
+            font-size: 1vw;
+        }
+
+        .header.top{
+            height:110rem;
+        }
+        
+    }
+
+    @media screen and (min-width: 1001px) {
+        html {
+            font-size: 10px;
+        }
+
+        
+    }
+}

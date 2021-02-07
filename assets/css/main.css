@@ -1,0 +1,579 @@
+:root {
+    --navy: #000087;
+    --gold: #b28300;
+}
+
+body:not(#canv) {
+    width: 100%;
+    position: relative;
+    margin: 0;
+
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ",
+        sans-serif;
+}
+.contents {
+    max-width: 1000px;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-weight: 600;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/*footer*/
+.footer {
+    background-color: var(--navy);
+    color: white;
+    overflow: hidden;
+    position: relative;
+    font-weight: 600;
+    text-align: center;
+    padding: 8rem 0 3rem;
+}
+
+.footer ul {
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+}
+
+.footer ul li {
+    font-size: 2rem;
+}
+
+.footer ul li a {
+    color: white;
+}
+
+.footer small {
+    font-size: 1.6rem;
+}
+
+/*top Page*/
+
+.container:nth-of-type(1),
+.container:nth-of-type(3),
+.container:nth-of-type(4) {
+    background-color: #f2f2f2;
+}
+
+.container:nth-of-type(5) {
+    background-color: #e4f3ff;
+}
+
+.features,
+.job,
+.senpai-system,
+.coaching,
+.voices {
+    padding: 3rem 3rem 10rem;
+    border-bottom: dotted #666666;
+}
+
+.bottom {
+    padding: 6rem 3rem;
+    border-bottom: none;
+}
+
+.title {
+    font-size: 4rem;
+}
+
+.title img {
+    display: inline;
+    width: 24rem;
+}
+
+/*Features*/
+
+.features-box {
+    display: flex;
+    justify-content: space-between;
+    border: solid #666666;
+    border-radius: 20px;
+    padding: 8rem 2rem 6rem;
+    background-color: #fefefe;
+}
+
+.feature {
+    padding: 0 1%;
+    position: relative;
+    flex-grow: 1;
+}
+
+.feature:not(:last-child) {
+    border-right: dashed #666666;
+}
+
+.feature h2 {
+    display: inline-block;
+    margin: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    color: white;
+    background-color: var(--navy);
+    border-radius: 50%;
+}
+
+.feature:nth-of-type(2) h2 {
+    background-color: var(--gold);
+}
+
+.feature p {
+    font-size: 2.7rem;
+    margin: 0;
+}
+
+/*Senpai system*/
+.senpai-system p {
+    font-size: 2rem;
+    margin: 5rem 0;
+}
+
+.senpai-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5rem;
+}
+
+.senpai a img {
+    width: 100%;
+    border-radius: 20px;
+    border-bottom: solid 3px #666666;
+    border-right: solid 3px #666666;
+    transition: transform 0.1s;
+}
+
+.senpai a img:hover {
+    transform: scale(1.1);
+}
+
+/*Voices*/
+.voice-box {
+    background-color: #fefefe;
+    border: solid 3px #666666;
+    border-radius: 20px;
+    padding: 5rem;
+}
+
+.voice {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: "a b c";
+    gap: 0 5rem;
+    margin: 5em 0;
+    text-align: left;
+}
+
+.person {
+    grid-area: a;
+    width: 100%;
+    align-self: end;
+    user-select: none;
+}
+
+.voice-contents {
+    border: solid 3px #666666;
+    border-radius: 20px;
+    grid-area: b;
+    font-size: 2rem;
+    padding: 1.5rem 3rem;
+    position: relative;
+}
+
+.voice-contents::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 2rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: #fefefe;
+    border-top: solid 3px #666666;
+    border-left: solid 3px #666666;
+}
+
+.voice:nth-of-type(odd) .voice-contents::after {
+    left: -1.9rem;
+    transform: rotate(-45deg) skew(calc((90deg - 40deg) / 2), calc((90deg - 40deg) / 2));
+}
+
+.voice:nth-of-type(even) .voice-contents::after {
+    right: -1.9rem;
+    transform: rotate(135deg) skew(calc((90deg - 40deg) / 2), calc((90deg - 40deg) / 2));
+}
+
+.voice-title,
+.voice-second-line > p {
+    margin: 0;
+}
+
+.voice-second-line {
+    display: flex;
+}
+
+.voice:nth-of-type(odd) .voice-second-line > p {
+    margin-right: 0.8rem;
+}
+
+.voice:nth-of-type(even) .voice-title {
+    text-align: right;
+}
+
+.voice:nth-of-type(even) .voice-second-line {
+    justify-content: flex-end;
+}
+
+.voice:nth-of-type(even) .voice-second-line > p {
+    margin-left: 0.8rem;
+}
+
+.voice:nth-of-type(even) .person {
+    grid-area: c;
+}
+
+.voice:nth-of-type(even) .voice-contents {
+    grid-area: b;
+}
+.to-whole {
+    float: right;
+}
+
+.review,
+.to-whole,
+.bottom {
+    font-size: 1.8rem;
+}
+
+/*bottom*/
+
+.bottom p {
+    margin-top: 0;
+    margin-bottom: 6rem;
+}
+
+.btn {
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: #006fff;
+    color: white;
+    border: 3px solid #006fff;
+    border-radius: 30px;
+    outline: none;
+    padding: 1.5rem 6rem;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.btn:hover {
+    color: #006fff;
+    background-color: white;
+}
+
+/*register*/
+#register {
+    background: linear-gradient(180deg, #5191ff, #92deff);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.form-box {
+    background-color: #fefefe;
+    border: 3px solid #666666;
+    border-radius: 30px;
+    width: fit-content;
+    margin: 10rem auto 5rem;
+    padding: 3rem;
+}
+
+.form {
+    margin: auto;
+    max-width: 1000px;
+}
+
+.form p{
+    margin: 0;
+}
+
+.form p,
+.form-element {
+    font-size: 2rem;  
+    text-align: left;
+}
+
+.name-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left:3rem;
+    gap: 1rem 10rem;
+}
+
+.form > .form-element {
+    margin: 3rem 0;
+}
+
+.form > .form-element:nth-of-type(7) {
+    margin: 5rem 0;
+}
+
+input,
+select{
+    border: 3px solid #666666;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+
+input {
+    font-weight: 400;
+}
+
+select option {
+    font-size: 2rem;
+}
+
+.form-flex, .birthday, .birthday>div {
+    display: flex;
+}
+
+
+.form-flex input {
+    flex-grow: 1;
+}
+
+.form > .form-element:nth-of-type(6) .form-flex input {
+    flex-grow: 0;
+}
+
+
+
+input[type=checkbox]{
+    display:none;
+}
+
+.check-label{
+    position:relative;
+    padding: 0 0 0 30px;
+    user-select:none;
+}
+
+.check-label::after,
+.check-label::before{
+    position:absolute;
+    content:"";
+    display:block;
+    top:50%;
+}
+
+.check-label::after{
+    left:0;
+    margin-top:-10px;
+    width:15px;
+    height:15px;
+    border:3px solid #666666;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.check-label::before{
+    left:6.5px;
+    margin-top:-7px;
+    width:5px;
+    height:9px;
+    border-right:3px solid var(--navy);
+    border-bottom:3px solid var(--navy);
+    transform:rotate(45deg);
+    opacity:0;
+}
+
+input[type=checkbox]:checked + .check-label::before{
+    opacity:1;
+}
+
+@media screen and (max-width: 767px) {
+    /*features*/
+    .features-box {
+        justify-content: center;
+        flex-direction: column;
+        padding: 5rem 4rem;
+    }
+
+    .feature {
+        padding: 5rem 0;
+        position: relative;
+        flex-grow: 1;
+    }
+
+    .feature:first-child {
+        padding-top: 0;
+    }
+
+    .feature:last-child {
+        padding-bottom: 0;
+    }
+
+    .feature:not(:last-child) {
+        border-right: none;
+        border-bottom: dashed #666666;
+    }
+
+    .feature p {
+        font-size: 4rem;
+    }
+
+    /*Senpai system*/
+    .senpai-system p {
+        font-size: 3rem;
+    }
+
+    .senpai-box {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    /*Voices*/
+    .voice-box {
+        padding: 3rem;
+    }
+
+    .voice {
+        gap: 0 3rem;
+        grid-template-columns: 1fr 4fr;
+        grid-template-areas: "a b";
+    }
+
+    .voice:nth-of-type(even) {
+        grid-template-columns: 4fr 1fr;
+    }
+
+    .voice-contents {
+        font-size: 3rem;
+        padding: 1rem 2rem;
+    }
+
+    .voice-contents::after {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .voice:nth-of-type(odd) .voice-contents::after {
+        left: -2rem;
+    }
+
+    .voice:nth-of-type(even) .voice-contents::after {
+        right: -2rem;
+    }
+
+    .voice:nth-of-type(even) .person {
+        grid-area: b;
+    }
+
+    .voice:nth-of-type(even) .voice-contents {
+        grid-area: a;
+    }
+
+    .review,
+    .to-whole,
+    .bottom {
+        font-size: 2.5rem;
+    }
+
+    /*bottom*/
+
+    .btn {
+        font-size: 3rem;
+    }
+
+    /*footer*/
+    .footer {
+        background-color: var(--navy);
+        color: white;
+        overflow: hidden;
+        position: relative;
+        font-weight: 600;
+        text-align: center;
+        padding: 8rem 0 3rem;
+    }
+
+    .footer ul {
+        max-width: 1000px;
+        margin: auto;
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type: none;
+    }
+
+    .footer ul li {
+        font-size: 2rem;
+    }
+
+    .footer ul li a {
+        color: white;
+    }
+
+    .footer small {
+        font-size: 1.6rem;
+    }
+
+    /*register*/
+
+
+    .form-box {
+        width: fit-content;
+        padding: 5rem;
+    }
+
+    .form p,
+    .form-element {
+        font-size: 4rem;
+    }
+
+    .name-box {
+        grid-template-columns: 1fr;
+    }
+
+    .name-box .form-element .form-flex input {
+        flex-grow: 0;
+    }
+
+    .name-box .form-element input {
+        width: 50%;
+    }
+    
+  
+    input,
+    select option {
+        font-size: 3.5rem;
+    }
+
+    .birthday,
+    .form>.form-element>.form-flex input,
+    .check-label{
+        margin-left:3rem;
+    }
+
+    .birthday>div,
+    .birthday>div select{
+        flex-grow:1;
+    }
+
+    .form>.form-element>.form-flex,
+    .form-element.form-flex{
+        flex-direction:column;
+    }
+}
