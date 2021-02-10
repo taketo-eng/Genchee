@@ -1,5 +1,5 @@
 :root {
-    --navy: #000087;
+    --navy: #1b215a;
     --gold: #b28300;
     --deepWater: #03829d;
 }
@@ -21,6 +21,21 @@ body:not(#canv) {
     margin: auto;
     text-align: center;
     font-weight: 600;
+}
+
+body:not(#top) .contents {
+    padding: 1rem 5rem 10rem;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.pc-br::after {
+    content: "\A";
+    white-space: pre;
 }
 
 ul {
@@ -82,8 +97,8 @@ ul {
 .senpai-system,
 .coaching,
 .voices {
-    padding: 3rem 3rem 10rem;
-    border-bottom: dotted #666666;
+    padding: 1rem 3rem 10rem;
+    border-bottom: 2px dotted #666666;
 }
 
 .bottom {
@@ -93,6 +108,9 @@ ul {
 
 .title {
     font-size: 4rem;
+    margin: 0;
+    margin: 5rem 0;
+    user-select: none;
 }
 
 .title img {
@@ -109,10 +127,11 @@ ul {
 .features-box {
     display: flex;
     justify-content: space-between;
-    border: solid #666666;
-    border-radius: 20px;
-    padding: 8rem 2rem 6rem;
+    border: 2px solid #666666;
+    border-radius: 10px;
+    padding: 9em 2rem 7rem;
     background-color: #fefefe;
+    user-select: none;
 }
 
 .feature {
@@ -130,7 +149,7 @@ ul {
     margin: 0;
     width: 4.5rem;
     height: 4.5rem;
-    line-height: 4.5rem;
+    line-height: 4.7rem;
     font-size: 4rem;
     margin-bottom: 2rem;
     color: white;
@@ -150,9 +169,14 @@ ul {
 /*job*/
 .job > p {
     font-size: 2rem;
+    margin: 0;
+    margin-bottom: 5rem;
+    user-select: none;
 }
 
 .job-box {
+    width: 65%;
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -188,13 +212,18 @@ ul {
 }
 
 .job-class p {
-    margin: 0;
+    margin: 2rem 0;
+    user-select: none;
 }
 
 /*Senpai system*/
 .senpai-system p {
     font-size: 2rem;
+}
+
+.senpai-system p:nth-of-type(2) {
     margin: 5rem 0;
+    font-size: 2.5rem;
 }
 
 .senpai-box {
@@ -218,6 +247,7 @@ ul {
 /*VISION MAKING*/
 .coaching {
     font-size: 2rem;
+    user-select: none;
 }
 
 .coaching .title,
@@ -245,10 +275,11 @@ ul {
 
 .task {
     position: relative;
+    margin: -1px;
 }
 
 .task:not(:nth-of-type(6)) {
-    border: 3px solid white;
+    border: 2px solid white;
     border-radius: 8px;
 }
 
@@ -288,7 +319,7 @@ ul {
 .voice-box {
     background-color: #fefefe;
     border: solid 3px #666666;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 5rem;
 }
 
@@ -297,7 +328,7 @@ ul {
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-areas: "a b c";
     gap: 0 5rem;
-    margin: 5em 0;
+    margin: 5rem 0;
     text-align: left;
 }
 
@@ -310,7 +341,7 @@ ul {
 
 .voice-contents {
     border: solid 3px #666666;
-    border-radius: 20px;
+    border-radius: 10px;
     grid-area: b;
     font-size: 2rem;
     padding: 1.5rem 3rem;
@@ -371,8 +402,14 @@ ul {
 .voice:nth-of-type(even) .voice-contents {
     grid-area: b;
 }
-.to-whole {
-    float: right;
+.to-whole p {
+    text-align: right;
+}
+
+.review,
+.to-whole p {
+    margin: 0;
+    margin-top: 1.5rem;
 }
 
 .review,
@@ -391,7 +428,7 @@ ul {
 .bottom div {
     max-width: 80%;
     margin: auto;
-    margin-bottom:10rem;
+    margin-bottom: 10rem;
 }
 
 .merit {
@@ -451,71 +488,105 @@ ul {
 }
 
 .form-box {
+    padding: 6rem 10rem 10rem;
+    width: 100%;
     background-color: #fefefe;
-    border: 3px solid #666666;
+    border: 5px solid #666666;
     border-radius: 30px;
-    width: fit-content;
-    margin: 10rem auto 5rem;
-    padding: 3rem;
+    margin: 10rem 0 5rem;
 }
 
-.form {
-    margin: auto;
-    max-width: 1000px;
+.form-box .title {
+    margin: 0;
+    margin-bottom: 8rem;
 }
 
-.form p {
+.form-box p {
     margin: 0;
 }
 
-.form p,
-.form-element {
-    font-size: 2rem;
+.form {
+    width: 100%;
     text-align: left;
 }
 
-.name-box {
+.input-title {
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+.form input:not(.btn),
+.form select {
+    font-size: 2.5rem;
+    border: 4px solid #666666;
+    border-radius: 10px;
+}
+
+.name-grid {
+    font-size: 2.5rem;
     display: grid;
+    gap: 2rem 15rem;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     margin-left: 3rem;
-    gap: 1rem 10rem;
 }
 
-.form > .form-element {
-    margin: 3rem 0;
+.grid-element {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
 }
 
-.form > .form-element:nth-of-type(7) {
-    margin: 5rem 0;
+.grid-element p {
+    white-space: nowrap;
 }
 
-input,
-select {
-    border: 3px solid #666666;
-    border-radius: 5px;
-    font-size: 2rem;
+.grid-element input {
+    width: 100%;
 }
 
-input {
-    font-weight: 400;
-}
-
-select option {
-    font-size: 2rem;
-}
-
-.form-flex,
-.birthday,
-.birthday > div {
+.flex-element {
     display: flex;
+    margin-top: 5rem;
 }
 
-.form-flex input {
+.flex-element .input-title {
+    margin-right: 3rem;
+}
+
+.flex-element:not(:nth-of-type(6)) input {
     flex-grow: 1;
 }
 
-.form > .form-element:nth-of-type(6) .form-flex input {
-    flex-grow: 0;
+
+.birth-form {
+    display: flex;
+    font-size: 2.5rem;
+}
+
+.birth-form>div{
+    display:flex;
+}
+
+.birth-form p {
+    margin-left: 0.8rem;
+    margin-right: 3rem;
+}
+
+.birth-form select {
+    width: 10rem;
+}
+
+.birth-form select:not(:first-of-type) {
+    width: 8rem;
+}
+
+.check-element {
+    margin: 8rem 0;
+}
+
+.form .btn {
+    display: block;
+    margin: 0 auto;
 }
 
 input[type="checkbox"] {
@@ -526,6 +597,7 @@ input[type="checkbox"] {
     position: relative;
     padding: 0 0 0 30px;
     user-select: none;
+    font-size: 2.5rem;
 }
 
 .check-label::after,
@@ -538,9 +610,9 @@ input[type="checkbox"] {
 
 .check-label::after {
     left: 0;
-    margin-top: -10px;
-    width: 15px;
-    height: 15px;
+    margin-top: -8px;
+    width: 20px;
+    height: 20px;
     border: 3px solid #666666;
     border-radius: 5px;
     cursor: pointer;
@@ -548,9 +620,9 @@ input[type="checkbox"] {
 
 .check-label::before {
     left: 6.5px;
-    margin-top: -7px;
-    width: 5px;
-    height: 9px;
+    margin-top: -6px;
+    width: 8px;
+    height: 12px;
     border-right: 3px solid var(--navy);
     border-bottom: 3px solid var(--navy);
     transform: rotate(45deg);
@@ -562,12 +634,13 @@ input[type="checkbox"]:checked + .check-label::before {
 }
 
 /*       Senpai        */
+
 .senpai-info {
-    background-color: var(--navy);
+    background-color: #00366b;
     color: white;
     border-radius: 20px;
     text-align: left;
-    margin: 6rem 0;
+    margin: 15rem 0 6rem;
     display: flex;
     height: 25rem;
 }
@@ -608,25 +681,23 @@ input[type="checkbox"]:checked + .check-label::before {
 }
 
 .senpai-message {
-    margin: 6rem 0;
+    margin: 10rem 0 10rem;
 }
 
 .senpai-message h2 {
     margin: 0;
-    margin-bottom: 6rem;
-    font-size: 2.5rem;
+    margin-bottom: 8rem;
+    font-size: 3rem;
 }
 
 .senpai-message p {
     font-size: 2rem;
     margin: 0;
-    margin-bottom: 6rem;
 }
 
 @media screen and (max-width: 767px) {
-    .title > span {
-        display: block;
-        margin-right: 0;
+    .pc-br::after {
+        content: "";
     }
 
     .sp-br::after {
@@ -634,8 +705,35 @@ input[type="checkbox"]:checked + .check-label::before {
         white-space: pre;
     }
 
+    .title > span {
+        display: block;
+        margin-right: 0;
+    }
+
     .title {
-        font-size: 5rem;
+        font-size: 7rem;
+        margin: 13rem 0;
+    }
+
+    .title img {
+        width: 40rem;
+    }
+
+    #senpai .contents,
+    #interview .contents {
+        min-height: 100vh;
+    }
+
+    .features,
+    .job,
+    .senpai-system,
+    .coaching,
+    .voices {
+        padding: 1rem 3rem 30rem;
+    }
+
+    .bottom {
+        padding: 6rem 3rem;
     }
 
     /*footer*/
@@ -675,43 +773,69 @@ input[type="checkbox"]:checked + .check-label::before {
     .features-box {
         justify-content: center;
         flex-direction: column;
-        padding: 5rem 4rem;
+        padding: 3rem 4rem;
     }
 
     .feature {
-        padding: 5rem 0;
+        padding: 10rem 0;
         position: relative;
         flex-grow: 1;
     }
 
-    .feature:first-child {
-        padding-top: 0;
+    .feature h2 {
+        font-size: 6rem;
+        width: 6.5rem;
+        height: 6.5rem;
+        line-height: 6.8rem;
+        margin-bottom: 5rem;
     }
 
-    .feature:last-child {
-        padding-bottom: 0;
+    .feature p {
+        font-size: 4.3rem;
     }
 
     .feature:not(:last-child) {
         border-right: none;
-        border-bottom: dashed #666666;
-    }
-
-    .feature p {
-        font-size: 4rem;
+        border-bottom: 2px dashed #666666;
     }
 
     /*job*/
+    .job .title {
+        margin-bottom: 10rem;
+    }
+
     .job > p {
-        font-size: 3rem;
+        font-size: 4rem;
+        margin-bottom: 13rem;
     }
     .job-box {
+        width: 90%;
         font-size: 5rem;
     }
 
+    .job-class p {
+        margin: 3rem 0;
+    }
+
+    .job-box::before {
+        width: 80%;
+    }
+
+    .job-box::after {
+        height: 80%;
+    }
+
     /*Senpai system*/
+    .senpai-system h1 {
+        margin-top: 15rem;
+    }
     .senpai-system p {
         font-size: 3rem;
+    }
+
+    .senpai-system p:nth-of-type(2) {
+        margin: 10rem 0;
+        font-size: 4rem;
     }
 
     .senpai-box {
@@ -724,16 +848,32 @@ input[type="checkbox"]:checked + .check-label::before {
     }
 
     .coaching .subtitle {
-        font-size:4rem;
+        font-size: 4rem;
     }
 
     .process {
+        width: 80%;
+        margin: auto;
         grid-template-columns: repeat(15, 1fr);
         grid-template-rows: repeat(6, 1fr);
+        gap: 0;
+    }
+
+    .desc {
+        margin: 4.5rem 0 4.5rem;
+    }
+
+    .desc:last-of-type {
+        margin-bottom: 13rem;
     }
 
     .task {
-        font-size: 3.5rem;
+        font-size: 3.3rem;
+    }
+
+    .task:not(:nth-of-type(6)) {
+        border: 2px solid white;
+        border-radius: 5px;
     }
 
     .task:first-of-type {
@@ -785,10 +925,17 @@ input[type="checkbox"]:checked + .check-label::before {
 
     /*Voices*/
     .voice-box {
-        padding: 3rem;
+        padding: 8rem 5rem;
+    }
+
+    .voice-box > .sp {
+        font-size: 5.5rem;
+        margin: 0;
+        margin-bottom: 8rem;
     }
 
     .voice {
+        margin: 10rem 0;
         gap: 0 3rem;
         grid-template-columns: 1fr 4fr;
         grid-template-areas: "a b";
@@ -800,7 +947,7 @@ input[type="checkbox"]:checked + .check-label::before {
 
     .voice-contents {
         font-size: 3rem;
-        padding: 1rem 2rem;
+        padding: 5rem 5rem;
     }
 
     .voice-contents::after {
@@ -829,10 +976,19 @@ input[type="checkbox"]:checked + .check-label::before {
         font-size: 2.5rem;
     }
 
+    .review,
+    .to-whole p {
+        margin-top: 5rem;
+    }
+
+    .to-whole p {
+        text-align: center;
+    }
+
     /*bottom*/
 
     .bottom {
-        font-size: 3rem;
+        font-size: 3.2rem;
     }
 
     .bottom .subtitle {
@@ -842,7 +998,7 @@ input[type="checkbox"]:checked + .check-label::before {
 
     .bottom div {
         max-width: 90%;
-        margin-bottom:20rem;
+        margin-bottom: 20rem;
     }
 
     .merit {
@@ -860,75 +1016,101 @@ input[type="checkbox"]:checked + .check-label::before {
     }
 
     .merit:first-of-type {
-        transform: rotate(-2deg) translateX(-25rem);
+        transform: rotate(-2deg) translateX(-20rem);
     }
 
     .merit:nth-of-type(2) {
-        transform: rotate(3deg) translateX(20rem);
+        transform: rotate(3deg) translateX(18rem);
     }
 
     .merit:nth-of-type(3) {
-        transform: rotate(-7deg) translateX(-9rem);
+        transform: rotate(-7deg) translateX(-5rem);
     }
 
     .merit:last-of-type {
-        transform: rotate(10deg) translateX(25rem);
+        transform: rotate(10deg) translateX(20rem);
     }
 
     .btn {
-        font-size: 3rem;
-        margin-bottom:10rem;
+        font-size: 4rem;
+        margin-bottom: 8rem;
+        padding: 1.5rem 10rem;
     }
 
     /*register*/
 
     .form-box {
-        width: fit-content;
-        padding: 5rem;
+        padding-top:8rem;
+        border: 3px solid #666666;
     }
 
-    .form p,
-    .form-element {
+    .input-title {
         font-size: 4rem;
     }
 
-    .name-box {
-        grid-template-columns: 1fr;
-    }
-
-    .name-box .form-element .form-flex input {
-        flex-grow: 0;
-    }
-
-    .name-box .form-element input {
-        width: 50%;
-    }
-
-    input,
-    select option {
+    .form input:not(.btn),
+    .form select {
         font-size: 3.5rem;
+        border: 3px solid #666666;
     }
 
-    .birthday,
-    .form > .form-element > .form-flex input,
+    .name-grid {
+        font-size: 3.5rem;
+        gap: 2rem 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        margin-left: 5rem;
+    }
+
+    .grid-element input {
+        width: 67%;
+    }
+
+    .flex-element {
+        flex-direction:column;
+    }
+
+    .flex-element .input-title {
+        margin-right: 0;
+    }
+
+    .flex-element:nth-of-type(6) input {
+        flex-grow:1;
+    }
+
+    .flex-element input,
+    .birth-form,
+    .check-element{
+        margin-left:5rem;
+    }
+
+    .birth-form {
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        font-size: 4rem;
+    }
+
+    .birth-form select {
+        width: 18rem;
+    }
+
+    .birth-form div:not(:first-of-type) select {
+        width: 15rem;
+    }
+
+    .form .btn {
+        display: block;
+        margin: 0 auto;
+    }
+
     .check-label {
-        margin-left: 3rem;
+        font-size: 4rem;
     }
 
-    .birthday > div,
-    .birthday > div select {
-        flex-grow: 1;
-    }
-
-    .form > .form-element > .form-flex,
-    .form-element.form-flex {
-        flex-direction: column;
-    }
 
     /*       Senpai        */
     .senpai-info {
-        width: 95%;
-        margin: 10rem auto;
+        margin: 20rem 0 15rem;
         height: 30rem;
     }
 
@@ -949,7 +1131,7 @@ input[type="checkbox"]:checked + .check-label::before {
 
     .senpai-message {
         width: 80%;
-        margin: 6rem auto;
+        margin: 10rem auto 15rem;
     }
 
     .senpai-message h2 {
@@ -958,10 +1140,5 @@ input[type="checkbox"]:checked + .check-label::before {
 
     .senpai-message p {
         font-size: 2.5rem;
-        margin-bottom: 15rem;
-    }
-
-    .senpai-message .btn {
-        font-size: 4rem;
     }
 }

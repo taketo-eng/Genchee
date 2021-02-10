@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genchee</title>
+    <link rel="shortcut icon" href="favicon.ico">
+
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/header.css">
 </head>
@@ -24,7 +26,8 @@
                         <li class="nav-item"><a href="./index.html">Top</a></li>
                         <li class="nav-item"><a href="#">紹介企業例</a></li>
                         <li class="nav-item"><a href="#">卒業生の声</a></li>
-                        <li class="nav-item"><a href="./register.html" target="_blank" rel="noopener noreferrer">登録はこちら</a></li>
+                        <li class="nav-item"><a href="./register.html" target="_blank"
+                                rel="noopener noreferrer">登録はこちら</a></li>
                     </div>
                 </ul>
             </nav>
@@ -41,42 +44,32 @@
     <div class="contents">
         <div class="form-box">
             <h1 class=title>会員登録</h1>
-            <form class="form" action="">
-                <p>お名前</p>
-                <div class="name-box">
-                    <div class="form-element">
-                        <label class="form-flex" for="family-name">
-                            <p>姓　</p>　
-                            <input type="text" name="family-name" id="family-name">
-                        </label>
-                    </div>
-                    <div class="form-element">
-                        <label class="form-flex" for="first-name">
-                            <p>名　</p>　
-                            <input type="text" name="first-name" id="first-name">
-                        </label>
-                    </div>
-                    <div class="form-element">
-                        <label class="form-flex" for="family-name-kana">
-                            <p>セイ</p>　
-                            <input type="text" name="family-name-kana" id="family-name-kana">
-                        </label>
-                    </div>
-                    <div class="form-element">
-                        <label class="form-flex" for="first-name-kana">
-                            <p>メイ</p>　
-                            <input type="text" name="first-name-kana" id="first-name-kana">
-                        </label>
-                    </div>
-
+            <form action="" class="form">
+                <p class="input-title">お名前</p>
+                <div class="name-grid">
+                    <label for="family-name" class="grid-element">
+                        <p>姓　</p>
+                        <input type="text" id="family-name" name="family-name">
+                    </label>
+                    <label for="first-name" class="grid-element">
+                        <p>名　</p>
+                        <input type="text" id="first-name" name="first-name">
+                    </label>
+                    <label for="family-name-kana" class="grid-element">
+                        <p>セイ</p>
+                        <input type="text" id="family-name-kana" name="family-name-kana">
+                    </label>
+                    <label for="first-name-kana" class="grid-element">
+                        <p>メイ</p>
+                        <input type="text" id="first-name-kana" name="first-name-kana">
+                    </label>
                 </div>
 
-                <div class="form-element form-flex">
-                    <p>生年月日　　</p>
-                    <div class="birthday">
+                <div class="flex-element">
+                    <p class="input-title">生年月日　</p>
+                    <div class="birth-form">
                         <div>
                             <select name="year" id="year">
-                                <!--PHPのループを使うだろうから少ししかいれてない-->
                                 <option value=""></option>
                                 <option value="2000">2000</option>
                                 <option value="2000">2001</option>
@@ -90,9 +83,8 @@
                                 <option value="2000">2009</option>
                                 <option value="2000">2010</option>
                             </select>
-                            <p>年</p>　
+                            <p>年</p>
                         </div>
-
                         <div>
                             <select name="month" id="month">
                                 <option value=""></option>
@@ -109,9 +101,8 @@
                                 <option value="11">11</option>
                                 <option value="12">12</option>
                             </select>
-                            <p>月</p>　
+                            <p>月</p>
                         </div>
-
                         <div>
                             <select name="day" id="day">
                                 <option value=""></option>
@@ -120,41 +111,40 @@
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                             </select>
-                            <p>日</p>　
+                            <p>日</p>
                         </div>
                     </div>
                 </div>
 
-
-                <div class="form-element">
-                    <label class="form-flex" for="current-job">
-                        <p>現職の職種　</p>
-                        <input type="text" name="current-job" id="current-job" placeholder="可能な範囲で詳細にお書きください">
+                <div class="flex-element">
+                    <label for="current-job">
+                        <p class="input-title">現職の職種</p>
                     </label>
+                    <input type="text" name="current-job" id="current-job" placeholder="可能な範囲で詳細にお書きください">
                 </div>
 
-                <div class="form-element">
-                    <label class="form-flex" for="education">
-                        <p>最終学歴　　</p>
-                        <input type="text" name="education" id="education" placeholder="学科やコースまでお書きください">
+                <div class="flex-element">
+                    <label for="education">
+                        <p class="input-title">最終学歴　</p>
                     </label>
+                    <input type="text" name="education" id="education" placeholder="学科やコースまでお書きください">
                 </div>
 
-                <div class="form-element">
-                    <label class="form-flex" for="email">
-                        <p>メールアドレス　</p>
-                        <input type="email" name="email" id="email" placeholder="(例)recruit@genchee.com">
+                <div class="flex-element">
+                    <label for="email">
+                        <p class="input-title">メールアドレス</p>
                     </label>
+                    <input type="email" name="email" id="email" placeholder="(例)recruit@genchee.com">
                 </div>
 
-                <div class="form-element">
-                    <label class="form-flex" for="tel">
-                        <p>電話番号　　　　</p>
-                        <input type="tel" name="tel" id="tel" placeholder="(例)09012345678">
+                <div class="flex-element">
+                    <label for="tel">
+                        <p class="input-title">電話番号　　　</p>
                     </label>
+                    <input type="tel" name="tel" id="tel" placeholder="(例)09012345678">
                 </div>
 
-                <div class="form-element">
+                <div class="check-element">
                     <input id="agreement" type="checkbox" name="agreement">
                     <label class="check-label" for="agreement">
                         <a href="#" target="_blank" rel="noopener noreferrer">利用規約</a>に同意する
